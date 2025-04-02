@@ -10,12 +10,12 @@
       shell: docker login -u smuheebpasha@gmail.com -p Muheeb@123 muheeb.jfrog.io  
     
     - name: pull an image
-      shell: docker pull muheeb.jfrog.io/docker-cicd-docker-local/app-a/Login:{{ build_number }}
+      shell: docker pull muheeb.jfrog.io/docker-cicd-docker-local/app-a/login:{{ build_number }}
 
     - name: remove container
       shell: docker rm -f devopsAppDeploy
         
     - name: create a application container
-      shell: docker run -id --name devopsAppDeploy -p 8111:8080 muheeb.jfrog.io/docker-cicd-docker-local/app-a/Login:{{ build_number }}
+      shell: docker run -id --name devopsAppDeploy -p 8111:8080 muheeb.jfrog.io/docker-cicd-docker-local/app-a/login:{{ build_number }}
  
    
